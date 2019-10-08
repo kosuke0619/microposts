@@ -5,11 +5,4 @@ class ToppagesController < ApplicationController
       @microposts = current_user.microposts.order(id: :desc).page(params[:page])
     end
   end
-  
-  def likes
-    if logged_in?
-      @micropost = current_user.microposts.build
-      @microposts = current_user.microposts.order(id: :desc).page(params[:page])
-    end
-  end
 end
